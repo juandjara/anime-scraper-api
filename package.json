@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "anime-scraper": "^3.0.0",
+    "axios": "^0.16.1",
+    "cheerio": "^1.0.0-rc.1",
     "cors": "^2.8.3",
     "express": "^4.15.3"
   }
