@@ -13,7 +13,8 @@ app.get('/', (req, res) => {
       '/',
       '/search?q=',
       '/show/:slug',
-      '/episode/:slug'
+      '/episode/:slug',
+      '/episode/latest'
     ]
   })
 })
@@ -26,6 +27,10 @@ app.get('/search', (req, res) => {
 app.get('/show/:slug', (req, res) => {
   const slug = req.params.slug;
   scraper.getShow(slug).then(show => res.json(show));
+})
+
+app.get('/episode/latest', (req, res) => {
+  scraper.latestEpisodes().then(eps => res.json(eps));
 })
 
 app.get('/episode/:slug', (req, res) => {
