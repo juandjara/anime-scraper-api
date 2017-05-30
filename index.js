@@ -19,23 +19,36 @@ app.get('/', (req, res) => {
   })
 })
 
+function errorHandler(err, res) {
+  console.error(err);
+  res.status(500).end();
+}
+
 app.get('/search', (req, res) => {
   const query = req.query.q;
-  scraper.search(query).then(search_res => res.json(search_res));
+  scraper.search(query)
+  .then(search_res => res.json(search_res))
+  .catch(err => errorHandler(err, res))
 })
 
 app.get('/show/:slug', (req, res) => {
   const slug = req.params.slug;
-  scraper.getShow(slug).then(show => res.json(show));
+  scraper.getShow(slug)
+  .then(show => res.json(show))
+  .catch(err => errorHandler(err, res))
 })
 
 app.get('/episode/latest', (req, res) => {
-  scraper.latestEpisodes().then(eps => res.json(eps));
+  scraper.latestEpisodes()
+  .then(eps => res.json(eps))
+  .catch(err => errorHandler(err, res))
 })
 
 app.get('/episode/:slug', (req, res) => {
   const slug = req.params.slug;
-  scraper.getEpisode(slug).then(ep => res.json(ep));
+  scraper.getEpisode(slug)
+  .then(ep => res.json(ep))
+  .catch(err => errorHandler(err, res))
 })
 
 app.listen(process.env.PORT || 4000, () => {

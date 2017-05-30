@@ -6,7 +6,7 @@ const bottleneck = require('bottleneck');
 const base_url = "https://ww1.gogoanime.io";
 
 // maxConcurrentCalls, minTimeBetweenRequests, maxTimeForOneRequest
-const limiter = new bottleneck(5, 500, 5000);
+const limiter = new bottleneck(5, 0, 5000);
 
 // TODO: Control concurrency and response time with npm.im/bottleneck
 // this is needed because when the search does not find anything
