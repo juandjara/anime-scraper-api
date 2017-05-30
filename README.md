@@ -10,4 +10,4 @@ npm start
 NOTE: This app needs acces to the `fs` module so it cannot (yet) be used in services such as `now`
 
 ## Contributing
-PRs welcome! Just ask.
+PRs welcome! Just use ES6 as much as you can.
