@@ -42,7 +42,7 @@ module.exports = {
         const data = episodes.map(function() {
           const $episode = $(this);
           return {
-            title: $episode.attr("title"),
+            name: $episode.attr("title"),
             link: $episode.attr("href").substring(1),
             image: $episode.find('img').attr('src')
           }
