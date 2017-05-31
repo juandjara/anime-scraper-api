@@ -43,7 +43,7 @@ module.exports = {
           const $episode = $(this);
           return {
             name: $episode.attr("title"),
-            link: $episode.attr("href").substring(1),
+            slug: $episode.attr("href").substring(1),
             image: $episode.find('img').attr('src')
           }
         }).get();
