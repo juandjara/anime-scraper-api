@@ -62,6 +62,7 @@ module.exports = {
     return new scraper.Episode({
       name: slug,
       url: `${base_url}/${slug}`,
+      slug,
       videoLinks: null
     }).fetch();
   }
